@@ -13,6 +13,8 @@
 		7C7A706A1D9F114700B21B5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7A70681D9F114700B21B5B /* Main.storyboard */; };
 		7C7A706C1D9F114700B21B5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C7A706B1D9F114700B21B5B /* Assets.xcassets */; };
 		7C7A706F1D9F114700B21B5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7A706D1D9F114700B21B5B /* LaunchScreen.storyboard */; };
+		AE3F27D01DAC998600532255 /* NSArray+BlockNSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3F27CF1DAC998600532255 /* NSArray+BlockNSArray.m */; };
+		AEC8C02E1DABF40000AA378E /* Part2.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC8C02D1DABF40000AA378E /* Part2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		7C7A706B1D9F114700B21B5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C7A706E1D9F114700B21B5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C7A70701D9F114700B21B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE3F27CE1DAC998600532255 /* NSArray+BlockNSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BlockNSArray.h"; sourceTree = "<group>"; };
+		AE3F27CF1DAC998600532255 /* NSArray+BlockNSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BlockNSArray.m"; sourceTree = "<group>"; };
+		AEC8C02C1DABF40000AA378E /* Part2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Part2.h; sourceTree = "<group>"; };
+		AEC8C02D1DABF40000AA378E /* Part2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Part2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +64,12 @@
 		7C7A705E1D9F114700B21B5B /* MemoryManagingProj */ = {
 			isa = PBXGroup;
 			children = (
-				7C7A70621D9F114700B21B5B /* AppDelegate.h */,
-				7C7A70631D9F114700B21B5B /* AppDelegate.m */,
+				AEC8C0241DABE18F00AA378E /* Part1 */,
+				AEC8C0251DABE19900AA378E /* Part2 */,
 				7C7A70651D9F114700B21B5B /* ViewController.h */,
 				7C7A70661D9F114700B21B5B /* ViewController.m */,
+				7C7A70621D9F114700B21B5B /* AppDelegate.h */,
+				7C7A70631D9F114700B21B5B /* AppDelegate.m */,
 				7C7A70681D9F114700B21B5B /* Main.storyboard */,
 				7C7A706B1D9F114700B21B5B /* Assets.xcassets */,
 				7C7A706D1D9F114700B21B5B /* LaunchScreen.storyboard */,
@@ -77,6 +85,24 @@
 				7C7A70601D9F114700B21B5B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEC8C0241DABE18F00AA378E /* Part1 */ = {
+			isa = PBXGroup;
+			children = (
+				AE3F27CE1DAC998600532255 /* NSArray+BlockNSArray.h */,
+				AE3F27CF1DAC998600532255 /* NSArray+BlockNSArray.m */,
+			);
+			name = Part1;
+			sourceTree = "<group>";
+		};
+		AEC8C0251DABE19900AA378E /* Part2 */ = {
+			isa = PBXGroup;
+			children = (
+				AEC8C02C1DABF40000AA378E /* Part2.h */,
+				AEC8C02D1DABF40000AA378E /* Part2.m */,
+			);
+			name = Part2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +178,9 @@
 			files = (
 				7C7A70671D9F114700B21B5B /* ViewController.m in Sources */,
 				7C7A70641D9F114700B21B5B /* AppDelegate.m in Sources */,
+				AEC8C02E1DABF40000AA378E /* Part2.m in Sources */,
 				7C7A70611D9F114700B21B5B /* main.m in Sources */,
+				AE3F27D01DAC998600532255 /* NSArray+BlockNSArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +337,7 @@
 				7C7A70751D9F114700B21B5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
