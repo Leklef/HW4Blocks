@@ -10,27 +10,34 @@
 
 @implementation NSArray (BlockNSArray)
 
--(void)getUniqueArray:(void(^)(NSArray*))completionBlock{
+-(void)getUniqueArray:(NSArray *)arr withBlock:(void(^)(NSArray* secondArr))completionBlock{
     BOOL dublicat = NO;
-    NSMutableArray *arr2 = [NSMutableArray arrayWithObject:[self objectAtIndex:0]];
-    for (int i=0; i<self.count; i++){
+    NSMutableArray *arr2 = [NSMutableArray arrayWithArray:self];
+    [arr2 addObjectsFromArray:arr];
+    NSMutableArray *arr3 = [NSMutableArray new];
+    for (int i=0; i<arr2.count; i++){
         for(int j=0; j<arr2.count;j++){
-            if([[self objectAtIndex:i]isEqual:[arr2 objectAtIndex:j]]){
-                dublicat = YES;
+            if(i!=j){
+                if([[arr2 objectAtIndex:i]isEqual:[arr2 objectAtIndex:j]]){
+                    dublicat = YES;
+                }
             }
         }
         if (dublicat!=YES) {
-            [arr2 addObject:[self objectAtIndex:i]];
+            [arr3 addObject:[arr2 objectAtIndex:i]];
         }
         dublicat = NO;
     }
-    completionBlock([NSArray arrayWithArray:arr2]);
+    completionBlock([NSArray arrayWithArray:arr3]);
 }
 
--(void)replaceObjectAtIndex:(int)index andB:(int)to withCompletionBlock:(void(^)(NSArray*))completionBlock{
+-(void)replaceObjectAtIndex:(int)index withObjectAtIndex:(int)to withCompletionBlock:(void(^)(NSArray*))completionBlock failureBlock:(void(^)(NSString *error))failure{
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self];
-    [arr exchangeObjectAtIndex:index withObjectAtIndex:to];
-    completionBlock([NSArray arrayWithArray:arr]);
+    if(index<arr.count && to<arr.count){
+        [arr exchangeObjectAtIndex:index withObjectAtIndex:to];
+        completionBlock([NSArray arrayWithArray:arr]);
+    }
+    failure([NSString stringWithFormat:@"Индекс слишком большой попробуй индекс меньше:%i",(int)arr.count]);
 }
 
 -(void)cheakArray:(void(^)(int count, NSString *arrayData))success failureBlock:(void(^)(NSString *error))failure{

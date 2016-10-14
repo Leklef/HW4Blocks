@@ -25,14 +25,16 @@
     NSLog(@"%@", p.string);
     
     NSArray *array = @[@1,@1,@3,@5,@5,@7,@4,@4,@5,@6,@"hi",@"hi"];
+    NSArray *array3 = @[@6,@"hello",@13,@"hi",@6];
     
-    [array replaceObjectAtIndex:2 andB:4 withCompletionBlock:^(NSArray *arr){
+    [array replaceObjectAtIndex:2 withObjectAtIndex:25 withCompletionBlock:^(NSArray *arr){
         NSLog(@"%@",arr);
+    }failureBlock:^(NSString *error) {
+        NSLog(@"%@",error);
     }];
     
-    
-    [array getUniqueArray:^(NSArray *arr){
-        NSLog(@"%@",arr);
+    [array getUniqueArray:array3 withBlock:^(NSArray *secondArr) {
+        NSLog(@"%@",secondArr);
     }];
     
     [array cheakArray:^(int count, NSString *arrayData) {
@@ -50,7 +52,6 @@
     NSLog(@"%i",p.notNullInt);
     p.notNullInt = -5;
     NSLog(@"%i",p.notNullInt);
-    
 }
 
 

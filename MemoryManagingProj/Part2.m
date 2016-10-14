@@ -31,19 +31,33 @@
 }
 
 -(NSMutableArray*)arr{
+    @synchronized (self){
+        if(!_arr){
+            _arr = [[NSMutableArray alloc]init];
+        }
+    }
     return _arr;
 }
 
--(void)setArr:(NSMutableArray*)array{
-    _arr = array;
+-(void)setArr:(NSMutableArray*)arr{
+    @synchronized (self) {
+        _arr = arr;
+    }
 }
 
 -(NSString*)str{
+    @synchronized (self) {
+        if(!_str){
+            _str = [[NSString alloc]init];
+        }
+    }
     return _str;
 }
 
 -(void)setStr:(NSString *)str{
-    _str = str;
+    @synchronized (self) {
+        _str = str;
+    }
 }
 
 -(void)hello{
